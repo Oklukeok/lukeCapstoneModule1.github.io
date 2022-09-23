@@ -1,8 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
-
-> Crossing THE PORTAL - Luke's Capstone Project
+# Crossing THE PORTAL - Luke's Capstone Project
 
 
 ## Built With
@@ -33,8 +31,6 @@ To check this project, please follow this steps:
 
 
 ## Authors
-
-👤 **Author1**
 
 👤 Lucas Bermudez
 
