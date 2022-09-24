@@ -227,7 +227,6 @@ header {
 }
 
 .spk-textContainer {
-  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -236,11 +235,14 @@ header {
 .spk-title {
   font-weight: 700;
   font-size: x-large;
+  margin: 0%;
 }
 
 .spk-subTitle {
   color: #ec5242;
   font-weight: 700;
+  margin: 0%;
+  text-align: center;
 }
 
 .spk-text {
@@ -348,7 +350,7 @@ footer {
     top: 0%;
     left: 0%;
     width: 100vw;
-    background-color: #ec5242;
+    background-color: #fff;
   }
 
   .headerLog {
@@ -365,7 +367,7 @@ footer {
   }
 
   nav div {
-    margin-right: 30px;
+    margin-right: 5%;
   }
 
   .headerLog div {
@@ -386,7 +388,7 @@ footer {
 
   .navLogo {
     width: 10%;
-    flex-basis: 70%;
+    flex-basis: 40%;
   }
 
   .navLogo img {

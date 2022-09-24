@@ -1,97 +1,111 @@
-const speakers = [
+const speakers = document.querySelector('#speakers');
+const speakersArray = [
   {
     picture: 'images/speakers/hamilton.png',
     name: 'Lewis Hamilton',
     description: '7-Times World Champion',
     text: 'This amazing driver won his first World Championship with McLaren in 2008',
+    id: 'speakers-card0',
   },
   {
     picture: 'images/speakers/mika.png',
     name: 'Mika Hakkinen',
     description: '2-Times World Champion',
     text: 'Mika won his two World Championship Titles with McLaren in 1998 and 1999',
+    id: 'speakers-card1',
   },
   {
     picture: 'images/speakers/norris.png',
     name: 'Lando Norris',
     description: 'McLaren F1 Driver',
     text: 'Racing for McLaren since 2019, he is our young talent',
+    id: 'speakers-card2',
   },
   {
     picture: 'images/speakers/brown.png',
     name: 'Zak Brown',
     description: 'McLaren Racing Team Principal',
     text: 'Chief Director of McLaren Motorsport division',
+    id: 'speakers-card3',
   },
   {
     picture: 'images/speakers/driver.png',
     name: 'Mike Turner',
     description: 'McLaren E-Sports Driver',
     text: 'Racing for McLaren E-Sports since 2019, he is our young talent',
+    id: 'speakers-card4',
   },
   {
     picture: 'images/speakers/driver2.png',
     name: 'Matt Helders',
     description: 'McLaren E-Sports Driver',
     text: 'Racing for McLaren E-Sports since 2019, he is our young talent',
+    id: 'speakers-card5',
   },
 ];
 
-document.getElementById('spk-img0').src = speakers[0].picture;
-document.getElementById('spk-title0').textContent = speakers[0].name;
-document.getElementById('spk-subTitle0').textContent = speakers[0].description;
-document.getElementById('spk-text0').textContent = speakers[0].text;
+const createSpeakers = () => {
+  const speakersTitle = document.createElement('h2');
+  speakersTitle.classList.add('speakers-title');
+  speakersTitle.innerText = 'Featured Speakers';
+  speakers.appendChild(speakersTitle);
 
-document.getElementById('spk-img1').src = speakers[1].picture;
-document.getElementById('spk-title1').textContent = speakers[1].name;
-document.getElementById('spk-subTitle1').textContent = speakers[1].description;
-document.getElementById('spk-text1').textContent = speakers[1].text;
+  const speakersCardsContainer = document.createElement('div');
+  speakersCardsContainer.classList.add('speakers-cardsContainer');
+  speakers.appendChild(speakersCardsContainer);
 
-document.getElementById('spk-img2').src = speakers[2].picture;
-document.getElementById('spk-title2').textContent = speakers[2].name;
-document.getElementById('spk-subTitle2').textContent = speakers[2].description;
-document.getElementById('spk-text2').textContent = speakers[2].text;
+  speakersArray.forEach((item) => {
+    const speakerCard = document.createElement('div');
+    speakerCard.classList.add('speakers-card');
+    speakerCard.setAttribute('id', item.id);
+    speakersCardsContainer.appendChild(speakerCard);
+    /* ok */
 
-document.getElementById('spk-img3').src = speakers[3].picture;
-document.getElementById('spk-title3').textContent = speakers[3].name;
-document.getElementById('spk-subTitle3').textContent = speakers[3].description;
-document.getElementById('spk-text3').textContent = speakers[3].text;
+    const imgContainer = document.createElement('div');
+    imgContainer.classList.add('spk-img');
+    speakerCard.appendChild(imgContainer);
 
-document.getElementById('spk-img4').src = speakers[4].picture;
-document.getElementById('spk-title4').textContent = speakers[4].name;
-document.getElementById('spk-subTitle4').textContent = speakers[4].description;
-document.getElementById('spk-text4').textContent = speakers[4].text;
+    const img = document.createElement('img');
+    img.classList.add('spk-imgs');
+    img.setAttribute('src', item.picture);
+    img.setAttribute('alt', 'Featured Speaker');
+    imgContainer.appendChild(img);
 
-document.getElementById('spk-img5').src = speakers[5].picture;
-document.getElementById('spk-title5').textContent = speakers[5].name;
-document.getElementById('spk-subTitle5').textContent = speakers[5].description;
-document.getElementById('spk-text5').textContent = speakers[5].text;
+    const info = document.createElement('div');
+    info.classList.add('spk-textContainer');
+    speakerCard.appendChild(info);
 
-/*
-document.getElementById('seeTonic').addEventListener('click', () => {
-  document.getElementById('modal-container').style.display = 'block';
+    const tittle = document.createElement('h2');
+    tittle.classList.add('spk-title');
+    tittle.innerText = item.name;
+    info.appendChild(tittle);
 
-  document.getElementById('project-name').textContent = projects[0].name;
-  document.getElementById('modal_li1').textContent = projects[0].clases1;
-  document.getElementById('modal_li2').textContent = projects[0].clases2;
-  document.getElementById('modal_li3').textContent = projects[0].clases3;
-  document.getElementById('project-image').src = projects[0].ftdImage;
-  document.getElementById('modal_li4').textContent = projects[0].technologies0;
-  document.getElementById('modal_li5').textContent = projects[0].technologies1;
-  document.getElementById('modal_li6').textContent = projects[0].technologies2;
-  document.getElementById('modal_li7').textContent = projects[0].technologies3;
-  document.getElementById('modal_li8').textContent = projects[0].technologies4;
-  document.getElementById('modal_li9').textContent = projects[0].technologies5;
-  document.getElementById('modal-description').textContent = projects[0].description;
-  document.getElementById('live-link').textContent = projects[0].liveVersion;
-  document.getElementById('source-link').textContent = projects[0].source;
-  document.getElementById('modal-close').src = projects[0].closeButton;
-  document.getElementById('liveIMG').src = projects[0].liveButton;
-  document.getElementById('srcIMG').src = projects[0].sourceButton;
-});
+    const place = document.createElement('h4');
+    place.classList.add('spk-subTitle');
+    place.innerText = item.description;
+    info.appendChild(place);
 
-document.getElementById('modal-close').addEventListener('click', () => {
-  document.getElementById('modal-container').style.display = 'none';
-});
+    const city = document.createElement('p');
+    city.classList.add('spk-text');
+    city.innerText = item.text;
+    info.appendChild(city);
+  });
 
-*/
+  const seeMore = document.createElement('div');
+  seeMore.classList.add('speakers-seeMore');
+  speakers.appendChild(seeMore);
+
+  const seeMoreFlex = document.createElement('div');
+  seeMoreFlex.classList.add('speakers-moreFlex');
+  seeMore.appendChild(seeMoreFlex);
+
+  const seeMoreTextCont = document.createElement('div');
+  seeMoreTextCont.classList.add('speakers-seeMoreText');
+  seeMoreFlex.appendChild(seeMoreTextCont);
+
+  const seeMoreText = document.createElement('p');
+  seeMoreText.innerText = 'See More';
+  seeMoreTextCont.appendChild(seeMoreText);
+};
+
+createSpeakers();

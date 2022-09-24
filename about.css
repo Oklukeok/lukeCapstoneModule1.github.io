@@ -231,7 +231,7 @@ footer {
     top: 0%;
     left: 0%;
     width: 100vw;
-    background-color: #ec5242;
+    background-color: #fff;
   }
 
   .headerLog {
@@ -248,7 +248,7 @@ footer {
   }
 
   nav div {
-    margin-right: 30px;
+    margin-right: 5%;
   }
 
   .headerLog div {
@@ -269,7 +269,7 @@ footer {
 
   .navLogo {
     width: 10%;
-    flex-basis: 70%;
+    flex-basis: 40%;
   }
 
   .navLogo img {
@@ -284,6 +284,7 @@ footer {
   }
 
   /* SECTION 3 */
+
   .driver1 {
     background-image: url("images/driverA.png");
     width: 40%;
@@ -292,6 +293,7 @@ footer {
     background-repeat: no-repeat;
     height: 200px;
     margin-top: 20px;
+    margin-right: 30%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -305,7 +307,8 @@ footer {
     background-position: top;
     background-repeat: no-repeat;
     height: 200px;
-    margin-top: 20px;
+    margin-top: -200px;
+    margin-left: 30%;
     display: flex;
     align-items: center;
     justify-content: center;
